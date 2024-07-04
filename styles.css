@@ -4,3 +4,69 @@
     padding: 0px;
     font-family: "Montserrat";
 }
+
+body{
+    background-color: rgb(7, 15, 43) !important;
+    color: white !important;
+}
+
+.name{
+    color: rgb(7, 15, 43);
+    font-size: 40px;
+    max-width: 200px;
+}
+
+.name::before{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    display: block;
+    height: 50px;
+    width: 200px;
+    background-color: white;
+    animation-name: slide-from-left;
+    animation-fill-mode: forwards;
+    animation-duration: 1s ;
+}
+
+@keyframes slide-from-left {
+    from {
+        width:0px;
+    }
+    to {
+        width: 205px;
+    }
+  }
+  
+
+.light-text{
+    font-family: "Montserrat";
+    font-weight: 300;
+}
+
+.nav-option{
+    padding: 5px 10px;
+}
+
+.nav-option:hover{
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.2);
+}
+
+.wrapper-text{
+    min-width: 300px;
+    height: 240px;
+}
+
+.wrapper-image{ 
+    max-width: 300px;   
+    position: relative;
+}
+
+.profile-image{
+    border-radius: 0.5rem;
+    border: 2px solid white;
+}
+
+
+
