@@ -46,4 +46,15 @@ darkModeButton.addEventListener('click',()=>changeTheme('dark-mode'));
 
 setTheme();
 
-const hiddenElements = document.querySelectorAll('.to-show')
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('from-left');
+        }else{
+            entry.target.classList.remove('from-left');    
+        }
+    })
+});
+
+const fromLeft = document.querySelectorAll('.to-show-from-left')
+fromLeft.forEach((element)=> observer.observe(element))

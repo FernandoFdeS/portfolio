@@ -154,13 +154,19 @@ body {
 }
 
 #experience .experience-title{
-    animation-delay: 0s;
-
+        animation-delay: 0s;
 }
 
 #projects .section-title::before{
-    animation-delay: 2s;
+    animation-delay: 1s;
+}
 
+#projects .section-title::before{
+    animation-delay: 1s;
+}
+
+#contact .experience-title{
+    animation-delay: 2s;
 }
 
 #light-mode {
@@ -372,6 +378,19 @@ body {
 .project-link a{
     text-decoration: none;
     color: var(--background-color);
+}
+
+.to-show-from-left{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.from-left{
+    filter: blur(0px);
+    transform: translateX(0%);
+    opacity: 1;
 }
 
 @keyframes show-container{
