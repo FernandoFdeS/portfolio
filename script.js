@@ -8,14 +8,16 @@ const themes =
         "dark-mode":
             {
                 "background-color": "rgb(7, 15, 43)",
+                "header-color": "rgba(7,14,43,0.3)",
                 "color": "white",
                 "nav-hover": "rgba(255,255,255,0.2)",
             },
         "light-mode":
             {
                 "background-color": "white",
+                "header-color": "rgba(255,255,255,0.3)",
                 "color": "black",
-                "nav-hover": "rgba(0,0,0,0.2)",
+                "nav-hover": "rgba(0,0,0,0.05)",
             },
     };
 
@@ -36,6 +38,7 @@ function setTheme(){
     r.style.setProperty('--background-color', themes[currentTheme]["background-color"]);
     r.style.setProperty('--color', themes[currentTheme]["color"]);
     r.style.setProperty('--nav-hover', themes[currentTheme]["nav-hover"]);
+    r.style.setProperty('--header-color', themes[currentTheme]["header-color"]);
 }
 
 lightModeButton.addEventListener('click',()=>changeTheme('light-mode'));
