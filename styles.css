@@ -1,19 +1,29 @@
+:root{
+    --background-color: rgb(7, 15, 43);
+    --color: white;
+    --nav-hover: rgba(255,255,255,0.2);
+} 
+
+
 *{
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
     font-family: "Montserrat";
+    transition: ease 0.1s;
 }
 
 body{
-    background-color: rgb(7, 15, 43) !important;
-    color: white !important;
+    background-color: var(--background-color) !important;
+    color: var(--color) !important;
 }
 
 .name{
-    color: rgb(7, 15, 43);
-    font-size: 40px;
-    max-width: 200px;
+    color: var(--background-color);
+    font-size: 55px;
+    max-width: 275px;
+    overflow: hidden;
+    position: relative;
 }
 
 .name::before{
@@ -21,12 +31,15 @@ body{
     position: absolute;
     z-index: -1;
     display: block;
-    height: 50px;
-    width: 200px;
-    background-color: white;
+    height: 60px;
+    background-color: var(--color);
     animation-name: slide-from-left;
     animation-fill-mode: forwards;
     animation-duration: 1s ;
+}
+
+.hello-text{
+    font-size: 45px;
 }
 
 @keyframes slide-from-left {
@@ -34,14 +47,14 @@ body{
         width:0px;
     }
     to {
-        width: 205px;
+        width: 100%;
     }
   }
   
 
 .light-text{
     font-family: "Montserrat";
-    font-weight: 300;
+    font-weight: 200;
 }
 
 .nav-option{
@@ -50,7 +63,7 @@ body{
 
 .nav-option:hover{
     cursor: pointer;
-    background-color: rgba(255,255,255,0.2);
+    background-color: var(--nav-hover);
 }
 
 .wrapper-text{
@@ -65,8 +78,37 @@ body{
 
 .profile-image{
     border-radius: 0.5rem;
-    border: 2px solid white;
+    border: 2px solid var(--color);
 }
 
+.experience-title{
+    text-align: center;
+    color: var(--background-color);
+    font-size: 55px;
+    letter-spacing: 10px;
+    min-width: 350px;
+    text-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+}
 
+.experience-title::before{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    display: block;
+    height: 75px;
+    background-color: var(--color);
+    animation-name: slide-from-left;
+    animation-fill-mode: forwards;
+    animation-duration: 1s ;
+}
 
+#light-mode{
+    cursor: pointer;
+}
+
+#dark-mode{
+    display: none;
+    cursor: pointer;
+}
