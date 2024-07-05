@@ -45,3 +45,5 @@ lightModeButton.addEventListener('click',()=>changeTheme('light-mode'));
 darkModeButton.addEventListener('click',()=>changeTheme('dark-mode'));
 
 setTheme();
+
+const hiddenElements = document.querySelectorAll('.to-show')

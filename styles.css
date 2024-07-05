@@ -331,12 +331,37 @@ body {
 .project-card{
     padding: 10px 40px;
     border-radius: 5px;
-    color: var(--color);
-    position: absolute;
-    width: 560px;
-    display: flex;
+    color: var(--background-color);
+    width: 560px;    
+    display: block;
     flex-direction: column;
-    background-color: var(--nav-hover);
+    background-color: var(--color);
+    z-index: 1;
+}
+
+.project-image{
+    height: fit-content;
+    display: block;
+    padding: 0px;
+    width: 390px;
+    overflow: hidden;
+    margin: 0px;
+    background-color: none;
+}
+
+.project-image img{
+    border-radius: 5px;
+    border: 5px solid var(--color);
+}
+
+.project-image-left{
+    transform: translateX(-20px);
+    z-index: -1;
+}
+
+.project-image-right{
+    transform: translateX(20px);
+    z-index: -1;
 }
 
 .project-title{
@@ -346,7 +371,7 @@ body {
 
 .project-link a{
     text-decoration: none;
-    color: var(--color);
+    color: var(--background-color);
 }
 
 @keyframes show-container{
@@ -394,6 +419,12 @@ body {
     }
 }
 
+
+@media screen and (max-width: 930px){
+    .project-image{
+        display: none;
+    }    
+}
 
 @media screen and (max-width: 600px){
     .timeline{
