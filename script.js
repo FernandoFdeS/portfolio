@@ -1,4 +1,4 @@
-let currentTheme = "dark-mode";
+let currentTheme = "light-mode";
 
 const darkModeButton = document.getElementById("dark-mode");
 const lightModeButton = document.getElementById("light-mode");
@@ -7,7 +7,7 @@ const themes =
     { 
         "dark-mode":
             {
-                "background-color": "rgb(7, 15, 43)",
+                "background-color": "rgb(0, 0, 0)",
                 "header-color": "rgba(7,14,43,0.3)",
                 "color": "white",
                 "nav-hover": "rgba(255,255,255,0.2)",
@@ -43,3 +43,5 @@ function setTheme(){
 
 lightModeButton.addEventListener('click',()=>changeTheme('light-mode'));
 darkModeButton.addEventListener('click',()=>changeTheme('dark-mode'));
+
+setTheme();
