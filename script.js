@@ -8,7 +8,7 @@ const themes =
         "dark-mode":
             {
                 "background-color": "rgb(0, 0, 0)",
-                "header-color": "rgba(7,14,43,0.3)",
+                "header-color": "rgba(0,0,0,0.3)",
                 "color": "white",
                 "nav-hover": "rgba(255,255,255,0.2)",
             },
