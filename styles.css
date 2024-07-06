@@ -153,19 +153,15 @@ body {
     animation-delay: 0s;
 }
 
-#experience .experience-title{
-        animation-delay: 0s;
+#experience .section-title::before{
+    animation-delay: 0s;
 }
 
 #projects .section-title::before{
     animation-delay: 1s;
 }
 
-#projects .section-title::before{
-    animation-delay: 1s;
-}
-
-#contact .experience-title{
+#contact .section-title::before{
     animation-delay: 2s;
 }
 
@@ -445,7 +441,7 @@ body {
     }    
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 790px){
     .timeline{
         margin: 50px auto;
     }
