@@ -25,6 +25,7 @@ body {
 }
 
 .header{
+    min-width: 375px;
     background: var(--header-color);
     backdrop-filter: blur( 20px );
     -webkit-backdrop-filter: blur( 20px );
@@ -389,6 +390,10 @@ body {
     opacity: 1;
 }
 
+.placeholder{
+    display: block;
+}
+
 @keyframes show-container{
     from{
         filter: blur(2px);
@@ -489,5 +494,15 @@ body {
 
     .wrapper-text {
         min-width: 320px;
+    }
+}
+
+@media screen and (max-width: 475px){
+    .header a{
+        font-size: 12px;
+    }
+    .placeholder{
+        display: none;
+        width: 0px;
     }
 }
