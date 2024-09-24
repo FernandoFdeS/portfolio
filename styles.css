@@ -238,6 +238,14 @@ body {
     animation-delay: 4.5s;
 }
 
+.timeline-container:nth-child(6) .timeline-dot{
+    animation-delay: 5s;
+}
+
+.timeline-container:nth-child(6) .text-box{
+    animation-delay: 5.5s;
+}
+
 .left-container{
     left: 0px;
 }
