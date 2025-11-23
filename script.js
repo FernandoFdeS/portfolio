@@ -1,7 +1,12 @@
-let currentTheme = "light-mode";
+import { translations } from "./translations.js";
+
+let currentTheme = "dark-mode";
+let currentLanguage = "pt";
 
 const darkModeButton = document.getElementById("dark-mode");
 const lightModeButton = document.getElementById("light-mode");
+const ptLanguageButton =  document.getElementById("pt-btn");
+const enLanguageButton =  document.getElementById("en-btn");
 const r = document.querySelector(':root');
 const themes = 
     { 
@@ -25,11 +30,11 @@ function changeTheme(theme){
     currentTheme=theme;
     if(theme==="light-mode"){
         console.log("aii");
-        darkModeButton.style.display="block";
+        darkModeButton.style.display="inline";
         lightModeButton.style.display="none";
     }else{
         darkModeButton.style.display="none";
-        lightModeButton.style.display="block";
+        lightModeButton.style.display="inline";
     }
     setTheme();
 }
@@ -44,7 +49,11 @@ function setTheme(){
 lightModeButton.addEventListener('click',()=>changeTheme('light-mode'));
 darkModeButton.addEventListener('click',()=>changeTheme('dark-mode'));
 
+ptLanguageButton.addEventListener("click", () => changeLanguage("pt"));
+enLanguageButton.addEventListener("click", () => changeLanguage("en"));
+
 setTheme();
+setLanguage();
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry)=>{
@@ -58,3 +67,23 @@ const observer = new IntersectionObserver((entries) => {
 
 const fromLeft = document.querySelectorAll('.to-show-from-left')
 fromLeft.forEach((element)=> observer.observe(element))
+
+function setLanguage() {
+    document.querySelectorAll("[data-lang]").forEach((el) => {
+        const key = el.getAttribute("data-lang");
+        el.innerHTML = translations[currentLanguage][key];
+     });
+}
+
+function changeLanguage(language){
+    ptLanguageButton.classList.remove("active");
+    enLanguageButton.classList.remove("active");
+
+    if (language === "pt") {
+        ptLanguageButton.classList.add("active");
+    } else {
+        enLanguageButton.classList.add("active");
+    }
+    currentLanguage=language;
+    setLanguage();
+}

@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/311db480a2.js" crossorigin="anonymous"></script>
-    <script defer src="./script.js" ></script>
+    <script defer type="module" src="./script.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <title>Portifolio</title>
 </head>
@@ -20,12 +20,14 @@
                 <div class="d-flex justify-content-between">
                     <div class="placeholder"></div>
                     <div class="w-fit">                    
-                        <a class="nav-option" href="#about">Sobre</a>
-                        <a class="nav-option" href="#experience">Experiência</a>
-                        <a class="nav-option" href="#projects">Projetos</a>
-                        <a class="nav-option" href="#contact">Contato</a>
+                        <a class="nav-option" data-lang="navAbout" href="#about">Sobre</a>
+                        <a class="nav-option" data-lang="navExp" href="#experience">Experiência</a>
+                        <a class="nav-option" data-lang="navProj" href="#projects">Projetos</a>
+                        <a class="nav-option" data-lang="navContact" href="#contact">Contato</a>
                     </div>
-                    <div>  
+                    <div>
+                        <span id="pt-btn" class="translate-btn active">PT</span>
+                        <span id="en-btn" class="translate-btn">EN</span>
                         <span id="light-mode"><i class="fa-regular fa-sun"></i></span>
                         <span id="dark-mode"><i class="fa-regular fa-moon"></i></span> 
                     </div>                           
@@ -37,11 +39,11 @@
         <div class="row">
             <div class="col-md-6 col-sm-12 p-5 d-flex greetings-container">
                 <div class="wrapper-text col-md-4 col-sm-12">
-                    <h2 class="mb-0 light-text hello-text">Oie, sou o</h2>
+                    <h2 class="mb-0 light-text hello-text" data-lang="hello">Oie, sou o</h2>
                     <h1 class="mb-0 name">Fernando</h1>
-                    <h6>Desenvolvedor fullstack</h6>
+                    <h6 data-lang="role">Desenvolvedor fullstack</h6>
                     <br>
-                    <p class="d-block mt-2">
+                    <p class="d-block mt-2" data-lang="aboutText">
                         Gosto de resolver problemas entregando soluções funcionais e bonitas.
                     </p>
                 </div>
@@ -49,7 +51,7 @@
             <div class=" col-md-6 col-sm-12 d-flex mb-sm-4 justify-content-center">
                 <div class="wrapper-image d-flex flex-column justify-content-center">
                     <img class="profile-image" src="./imgs/profile.png" width="300px">
-                    <small class="text-center text-small funny-text">imagem meramente ilustrativa</small>
+                    <small class="text-center text-small funny-text"  data-lang="funnyLabel">imagem meramente ilustrativa</small>
                 </div>
             </div>
         </div>
@@ -57,14 +59,14 @@
     <section class="container-fluid mt-md-5 mt-sm-2" id="experience">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="section-title experience-title">Experiência</h1>
+                <h1 class="section-title experience-title" data-lang="navExp">Experiência</h1>
             </div>
             <div class="row d-flex justify-content-center">
                 <div class="col-11 mt-4 p-md-0 p-sm-2">
-                    <p class="pl-2 text-justify">
+                    <p class="pl-2 text-justify" data-lang="expIntro">
                         Na minha jornada apresentada na <i>timeline</i> abaixo, eu ganhei experiência em várias linguages,
-                        frameworks e softskills, sendo elas: JavaScript, jQuery, Angular, React, PHP, Laravel, C++, Python, 
-                        MySQL, PostgreSQL e metodologias ágeis no geral. 
+                        frameworks e softskills, sendo elas: JavaScript, jQuery, Angular, React, PHP, Laravel, Python, 
+                        MySQL, MongoDB, Redis e metodologias ágeis no geral. 
                     </p>
                 </div>           
             </div>
@@ -72,9 +74,9 @@
                 <div class="timeline-container left-container">
                     <div class="timeline-dot"></div>
                     <div class="text-box">
-                        <h2>Técnico em informática</h2>
+                        <h2 data-lang="expTechTitle">Técnico em informática</h2>
                         <small>2019</small>
-                        <p>Em 2019 me formei no Instituto Federal de Santa Catarina, onde cursei o ensino médio integrado com <b>técnico em informática</b>.
+                        <p data-lang="expTechText">Em 2019 me formei no Instituto Federal de Santa Catarina, onde cursei o ensino médio integrado com <b>técnico em informática</b>.
                            Foi durante essa época que tive meu primeiro contato com a <b>programação web</b>, e foi justamente aí que me apaixonei pela área.
                         </p>
                         <span class="timeline-arrow left-arrow"></span>
@@ -83,9 +85,9 @@
                 <div class="timeline-container right-container">
                     <div class="timeline-dot"></div>
                     <div class="text-box">
-                        <h2>Freelancer</h2>
-                        <small>2020 - Dias atuais</small>
-                        <p>Em 2020 comecei a trabalhar como freelancer. Junto de um amigo, fui "contratado" pela <b><a href="https://infosolda.com.br">Infosolda</a></b> para desenvolver o 
+                        <h2 data-lang="expFreelancerTitle">Freelancer</h2>
+                        <small data-lang="expFreelancerDate">2020 - Dias atuais</small>
+                        <p data-lang="expFreelancerText">Em 2020 comecei a trabalhar como freelancer. Junto de um amigo, fui "contratado" pela <b><a href="https://infosolda.com.br">Infosolda</a></b> para desenvolver o 
                         <b><a href="https://infosolda.com.br/rastrea/">Rastrea</a></b>, uma plataforma
                         para gerenciamento de documentos relacionados a soldagem. Prestamos serviços de manutenção e implementação de novas <i>features</i> até hoje.
                         </p>
@@ -95,9 +97,9 @@
                 <div class="timeline-container left-container">
                     <div class="timeline-dot"></div>
                     <div class="text-box">
-                        <h2>Estágio</h2>
-                        <small>2022/Fev - 2022/Jun</small>
-                        <p class="text-justify">Em 2022 tive a oportunidade de atuar como <b>Desenvolvedor Fullstack</b> na <i>greentech</i> <b>Eloverde</b>. Aqui trabalhei principalmente com
+                        <h2 data-lang="expInternTitle">Estágio</h2>
+                        <small  data-lang="expInternDate">2022/Fev - 2022/Jun</small>
+                        <p class="text-justify" data-lang="expInternText">Em 2022 tive a oportunidade de atuar como <b>Desenvolvedor Fullstack</b> na <i>greentech</i> <b>Eloverde</b>. Aqui trabalhei principalmente com
                             <span class="language-badge">Laravel</span> e <span class="language-badge">Angular</span>. Resolvi muitos bugs, tanto no front quanto no back.
                             Também remodelei algumas páginas, melhorando a experiência do usuário final.
                         </p>
@@ -107,9 +109,9 @@
                 <div class="timeline-container right-container">
                     <div class="timeline-dot"></div>
                     <div class="text-box">
-                        <h2>Bolsista</h2>
-                        <small>2022/Set - 2024/Set</small>
-                        <p>Ainda em 2022 entrei como bolsista no projeto "<b>Desenvolvimento Profissional e Inovação Tecnológica na área de TI</b>", onde atuei em 
+                        <h2 data-lang="expScholarTitle">Bolsista</h2>
+                        <small data-lang="expScholarDate">2022/Set - 2024/Set</small>
+                        <p data-lang="expScholarText">Ainda em 2022 entrei como bolsista no projeto "<b>Desenvolvimento Profissional e Inovação Tecnológica na área de TI</b>", onde atuei em 
                             diversos projetos da Secretaria Especial de Tecnologia e Informação da UFFS. Praticamente cada projeto usava
                             uma técnologia diferente do anterior, sempre sendo necessário se adaptar e aprender algo novo. Estive envolvido na atualização técnologica
                             do <b><a href="https://dados.uffs.edu.br">Portal de Dados Abertos da UFFS</a></b>,
@@ -122,9 +124,10 @@
                 <div class="timeline-container left-container">
                     <div class="timeline-dot"></div>
                     <div class="text-box">
-                        <h2>Graduado</h2>
-                        <small>2024/Jul</small>
-                        <p> Em Julho de 2024 me graduei como <b>bacharel em Ciência da Computação</b>, pela UFFS - Câmpus Chapecó.
+                        <h2 data-lang="expGraduationTitle">Graduado</h2>
+                        <small data-lang="expGraduationDate">2024/Jul</small>
+                        <p data-lang="expGraduationText">
+                            Em Julho de 2024 me graduei como <b>bacharel em Ciência da Computação</b>, pela UFFS - Câmpus Chapecó.
                             Durante os anos de graduação eu aprendi os <b>fundamentos da computação</b>, <b>estruturas de dados</b>,
                             <b>arquiteturas de computadores</b>, <b>engenharia de software</b> e <b>desenvolvimento de sistemas</b>.
                         </p>
@@ -134,9 +137,12 @@
                 <div class="timeline-container right-container">
                     <div class="timeline-dot"></div>
                     <div class="text-box">
-                        <h2>Desenvolvedor</h2>
-                        <small>2024/Set - Dias atuais</small>
-                        <p> Comecei a atuar como desenvolvedor fullstack na <b>Amplimed</b>, trabalhando com <span class="language-badge">Laravel</span> <span class="language-badge">React</span> e outras tecnologias.
+                        <h2 data-lang="expDevTitle">Desenvolvedor</h2>
+                        <small data-lang="expDevDate">2024/Set - Dias atuais</small>
+                        <p data-lang="expDevText">
+                            Comecei a atuar como desenvolvedor fullstack na <b>Amplimed</b>, trabalhando com 
+                            <span class="language-badge">Laravel</span>, <span class="language-badge">React</span> e outras tecnologias.
+                            Foi onde aprofundei meus conhecimentos em desenvolvimento e arquitetura de software, lidando diariamente com problemas que exigem soluções eficientes, consistentes e escaláveis.
                         </p>
                         <span class="timeline-arrow right-arrow"></span>
                     </div>
@@ -147,23 +153,22 @@
     <section class="container-fluid mt-md-5 mt-sm-2" id="projects">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="section-title projects-title">Projetos</h1>
+                <h1 class="section-title projects-title" data-lang="navProj">Projetos</h1>
             </div>
-
             <div class="col-12 d-flex justify-content-center flex-column">
                 <div class="project mt-4 d-flex justify-content-center flex-sm-column flex-md-row align-items-center to-show-from-left">
-                    <div class="project-card mb-4 ">
-                        <span class="project-title">Alocador de Salas</span>
-                        <p class="text-justify">
+                    <div class="project-card mb-4">
+                        <span class="project-title" data-lang="projRoomAllocatorTitle">Alocador de Salas</span>
+                        <p class="text-justify" data-lang="projRoomAllocatorText">
                             Esse projeto é decorrente do meu TCC e tem como objetivo resolver o <b>Problema da Alocação de Salas</b> na UFFS.
-                            Esse é um problema onde, semestralmente, é preciso alocar as aulas da universidade à salas disponíveis seguindo uma
+                            Esse é um problema onde, semestralmente, é preciso alocar as aulas da universidade às salas disponíveis seguindo uma
                             série de critérios. A solução já está sendo utilizada na universidade, reduzindo o tempo da tarefa de 2 a 5 dias para 
-                            apenas algumas horas.                            
+                            apenas algumas horas.
                         </p>
                         <div>
                             <span class="invert language-badge">Python</span>
                             <span class="invert language-badge">Flask</span>
-                            <span class="invert language-badge">Programação Linear Inteira</span>
+                            <span class="invert language-badge" data-lang="projRoomAllocatorILP">Programação Linear Inteira</span>
                         </div>
                         <div class="mt-2 mb-2">
                             <span class="project-link">
@@ -179,7 +184,7 @@
                 <div class="project mt-2 d-flex justify-content-center flex-md-row-reverse flex-sm-column-reverse align-items-center to-show-from-left">
                     <div class="project-card mb-4">
                         <span class="project-title">Rastrea</span>
-                        <p class="text-justify">
+                        <p class="text-justify" data-lang="projRastreaText">
                             O Rastrea é uma plataforma desenvolvida em <b>Laravel</b> com a finalidade de gerenciar documentos de qualificações
                             de soldadores. Feito sob demanda da <b>Infosolda</b>, o sistema também conta com notificação via e-mails, geração de
                             documentos complexos, opção de renovação dos documentos cadastrados no sistema, uma dashboard administrativa, entre outras <i>features</i>.                         
@@ -205,7 +210,7 @@
     <section class="container-fluid mt-md-5 mt-sm-2" id="contact">
         <div class="row">
             <div class="col-12 text-center">
-                <h1 class="section-title mb-0 p-0 contact-title">
+                <h1 class="section-title mb-0 p-0 contact-title" data-lang="navContact">
                     Contato
                 </h1>
                 <div class="my-links mt-4 mb-4 d-flex justify-content-around">                 
