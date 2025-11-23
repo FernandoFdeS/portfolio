@@ -29,7 +29,6 @@ const themes =
 function changeTheme(theme){
     currentTheme=theme;
     if(theme==="light-mode"){
-        console.log("aii");
         darkModeButton.style.display="inline";
         lightModeButton.style.display="none";
     }else{
